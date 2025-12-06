@@ -1,6 +1,6 @@
-package LLD.dto.builders;
+package LLD.banking_system.dto.builders;
 
-import LLD.dto.Customer;
+import LLD.banking_system.dto.Customer;
 
 public class CustomerBuilder {
 

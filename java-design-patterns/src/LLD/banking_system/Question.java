@@ -1,7 +1,7 @@
-package LLD;
+package LLD.banking_system;
 
-import LLD.services.BankingSystem;
-import LLD.services.BankingSystemImpl;
+import LLD.banking_system.services.BankingSystem;
+import LLD.banking_system.services.BankingSystemImpl;
 
 import java.time.LocalDateTime;
 import java.util.List;

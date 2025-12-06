@@ -1,6 +1,6 @@
-package LLD.dto.builders;
+package LLD.banking_system.dto.builders;
 
-import LLD.dto.Account;
+import LLD.banking_system.dto.Account;
 
 import java.time.LocalDateTime;
 

@@ -1,10 +1,10 @@
-package LLD.services;
+package LLD.banking_system.services;
 
-import LLD.dto.Account;
-import LLD.dto.builders.AccountBuilder;
-import LLD.dto.Customer;
-import LLD.dto.Payment;
-import LLD.dto.builders.PaymentBuilder;
+import LLD.banking_system.dto.Account;
+import LLD.banking_system.dto.builders.AccountBuilder;
+import LLD.banking_system.dto.Customer;
+import LLD.banking_system.dto.Payment;
+import LLD.banking_system.dto.builders.PaymentBuilder;
 
 import java.time.LocalDateTime;
 import java.util.*;

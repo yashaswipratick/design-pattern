@@ -1,9 +1,8 @@
-package LLD.dto;
+package LLD.banking_system.dto;
 
-import LLD.dto.builders.PaymentBuilder;
+import LLD.banking_system.dto.builders.PaymentBuilder;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 public class Payment {
 
