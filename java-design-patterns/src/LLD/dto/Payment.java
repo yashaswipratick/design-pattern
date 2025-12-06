@@ -1,5 +1,7 @@
 package LLD.dto;
 
+import LLD.dto.builders.PaymentBuilder;
+
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -11,7 +13,7 @@ public class Payment {
     private Double balance;
     private LocalDateTime transactionTimestamp;
 
-    public Payment(UUID paymentId, String accountId, String customerId, Double balance, LocalDateTime transactionTimestamp) {
+    public Payment(PaymentBuilder paymentBuilder) {
         this.paymentId = paymentId;
         this.accountId = accountId;
         this.customerId = customerId;

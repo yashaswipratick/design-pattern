@@ -1,8 +1,10 @@
 package LLD.services;
 
 import LLD.dto.Account;
+import LLD.dto.builders.AccountBuilder;
 import LLD.dto.Customer;
 import LLD.dto.Payment;
+import LLD.dto.builders.PaymentBuilder;
 
 import java.time.LocalDateTime;
 import java.util.*;
@@ -31,7 +33,12 @@ public class BankingSystemImpl implements BankingSystem {
             return false;
         }
         //Creates a new account with the given accountId and Sets the account balance to initialBalance.
-        Account account = new Account(accountId, "CUST_" + UUID.randomUUID(), initialBalance, timestamp);
+        Account account = new AccountBuilder()
+                .setAccountId(accountId)
+                .setCustomerId("CUST_" + UUID.randomUUID())
+                .setBalance(initialBalance)
+                .setTransactionTimestamp(timestamp)
+                .build();
 
         accountDetails.put(accountId, account);
         System.out.println("Account created successfully. accountId - " + accountId);
@@ -97,7 +104,12 @@ public class BankingSystemImpl implements BankingSystem {
         accountDetails.put(sourceAccountId, srcAccount);
 
         if (transactionDetails.isEmpty() || !transactionDetails.containsKey(sourceAccountId)) {
-            Account transaction = new Account(srcAccount.getAccountId(), srcAccount.getCustomerId(), amount, timestamp);
+            Account transaction = new AccountBuilder()
+                    .setAccountId(srcAccount.getAccountId())
+                    .setCustomerId(srcAccount.getCustomerId())
+                    .setBalance(amount)
+                    .setTransactionTimestamp(timestamp)
+                    .build();
             transactionDetails.put(sourceAccountId, transaction);
         } else {
             Account transaction = transactionDetails.get(sourceAccountId);
@@ -129,7 +141,13 @@ public class BankingSystemImpl implements BankingSystem {
         }
 
         double cashback = ((amount * 2)/100);
-        Payment payment = new Payment(UUID.randomUUID(), accountId, accountDetails.get(accountId).getCustomerId(), cashback, LocalDateTime.now());
+        Payment payment = new PaymentBuilder()
+                .setPaymentId(String.valueOf(UUID.randomUUID()))
+                .setAccountId(accountId)
+                .setCustomerId(accountDetails.get(accountId).getCustomerId())
+                .setBalance(cashback)
+                .setTransactionTimestamp(LocalDateTime.now())
+                .build();
         cashBackDetails.put(accountId, payment);
         Account account = accountDetails.get(accountId);
         account.setBalance(account.getBalance() - amount);

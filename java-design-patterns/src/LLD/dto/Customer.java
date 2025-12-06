@@ -1,5 +1,7 @@
 package LLD.dto;
 
+import LLD.dto.builders.CustomerBuilder;
+
 public class Customer {
 
     private String customerId;
@@ -9,6 +11,16 @@ public class Customer {
     private String address;
     private String addressProof;
     private String phoneNumber;
+
+    public Customer(CustomerBuilder customerBuilder) {
+        this.customerId = customerBuilder.customerId;
+        this.name = customerBuilder.name;
+        this.age = customerBuilder.age;
+        this.dob = customerBuilder.dob;
+        this.address = customerBuilder.address;
+        this.addressProof = customerBuilder.addressProof;
+        this.phoneNumber = customerBuilder.phoneNumber;
+    }
 
     public String getCustomerId() {
         return customerId;

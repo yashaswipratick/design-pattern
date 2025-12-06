@@ -1,5 +1,7 @@
 package LLD.dto;
 
+import LLD.dto.builders.AccountBuilder;
+
 import java.time.LocalDateTime;
 
 public class Account {
@@ -9,11 +11,11 @@ public class Account {
     private Double balance;
     private LocalDateTime transactionTimestamp;
 
-    public Account(String accountId, String customerId, Double balance, LocalDateTime transactionTimestamp) {
-        this.accountId = accountId;
-        this.customerId = customerId;
-        this.balance = balance;
-        this.transactionTimestamp = transactionTimestamp;
+    public Account(AccountBuilder accountBuilder) {
+        this.accountId = accountBuilder.accountId;
+        this.customerId = accountBuilder.customerId;
+        this.balance = accountBuilder.balance;
+        this.transactionTimestamp = accountBuilder.transactionTimestamp;
     }
 
     public String getAccountId() {
@@ -47,32 +49,4 @@ public class Account {
     public void setTransactionTimestamp(LocalDateTime transactionTimestamp) {
         this.transactionTimestamp = transactionTimestamp;
     }
-
-    /*public static  class AccountBuilder {
-        private String accountId; // private Key
-        private String customerId; // Foreign Key
-
-        //optional
-        private Double balance;
-        private LocalDateTime transactionTimestamp;
-
-        public AccountBuilder(String accountId, String customerId) {
-            this.accountId = accountId;
-            this.customerId = customerId;
-        }
-
-        public AccountBuilder setBalance(Double balance) {
-            this.balance = balance;
-            return this;
-        }
-
-        public AccountBuilder setTimeStamp(LocalDateTime timeStamp) {
-            this.transactionTimestamp = timeStamp;
-            return this;
-        }
-
-        public Account build() {
-            return new Account(this);
-        }
-    }*/
 }
