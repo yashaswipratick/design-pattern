@@ -1,0 +1,11 @@
+Definition
+
+The Adapter Pattern is a structural design pattern that serves as a bridge between two
+incompatible interfaces, enabling them to work together by providing data in a format the
+client expects.
+
+Real Life Examples
+
+    1. WeighingScale
+    2. Plug, Socket & Power Adapter
+    3. XMLJSONParser
