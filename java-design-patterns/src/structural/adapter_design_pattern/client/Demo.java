@@ -1,4 +1,9 @@
-package structural.adapter_design_pattern;
+package structural.adapter_design_pattern.client;
+
+import structural.adapter_design_pattern.adapter.WeighingMachineAdapter;
+import structural.adapter_design_pattern.adapter.WeighingMachineAdapterImpl;
+import structural.adapter_design_pattern.Adaptee.ImperialWeighingMachine;
+import structural.adapter_design_pattern.Adaptee.ImperialWeighingMachineImpl;
 
 public class Demo {
 

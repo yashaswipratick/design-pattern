@@ -1,4 +1,6 @@
-package structural.adapter_design_pattern;
+package structural.adapter_design_pattern.adapter;
+
+import structural.adapter_design_pattern.Adaptee.ImperialWeighingMachine;
 
 // Concrete Adapter converts pounds → kg
 public class WeighingMachineAdapterImpl implements WeighingMachineAdapter{

@@ -1,4 +1,4 @@
-package structural.adapter_design_pattern;
+package structural.adapter_design_pattern.Adaptee;
 
 // Adaptee Interface
 public interface ImperialWeighingMachine {
